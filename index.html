@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Japanese Practice — N5~N3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Japanese Sentences Practice</h1>
+      <p class="sub">N5 → N3</p>
+    </header>
+
+    <div class="scoreboard">
+      <span>Score: <strong id="score">0</strong></span>
+      <span class="sep">|</span>
+      <span>Streak: <strong id="streak">0</strong></span>
+    </div>
+
+    <div class="controls">
+      <div class="left">
+        <label for="level">Level</label>
+        <select id="level" onchange="changeLevel()">
+          <option value="N5">N5</option>
+          <option value="N4">N4</option>
+          <option value="N3">N3</option>
+        </select>
+      </div>
+
+      <div class="modes">
+        <button class="mode-btn" id="btn-enja" onclick="setMode('en-ja')">English → Japanese</button>
+        <button class="mode-btn" id="btn-jaen" onclick="setMode('ja-en')">Japanese → English</button>
+      </div>
+    </div>
+
+    <main>
+      <div id="sentence" class="sentence-card">Press <strong>Next / Generate</strong> to create a sentence</div>
+
+      <div class="input-row">
+        <input id="userInput" autocomplete="off" placeholder="Type answer here (kana or kanji for EN→JP; English for JP→EN)">
+        <button id="listenBtn" class="listen-btn" onclick="speakInput()" title="Listen">🔊</button>
+      </div>
+
+      <div class="actions">
+        <button class="pink" onclick="checkAnswer()">Check</button>
+        <button class="pink" onclick="showHint()">Hint</button>
+        <button class="pink" onclick="generateOneForLevel()" id="genBtn">Next / Generate</button>
+        <button class="pink" onclick="toggleKanaKanji()">Toggle Kanji</button>
+      </div>
+
+      <div id="hint" class="hint"></div>
+      <div id="feedback" class="feedback"></div>
+
+      <div class="ad-placeholder">[Ad placeholder — add AdSense snippet here]</div>
+    </main>
+
+    <footer>
+      <small>Hi! I’m Nexo — a small web developer and a Japanese learner currently studying at the N5 level.<br> I often struggle with making sentences in Japanese, so I created this website for anyone who has the same problem.
+        <br>
+IMPORTANT: I’ve added ads to help support the project so I can continue improving the site.<br>
+Right now, the sentence generator works using template-based structures, but I plan to upgrade it as the website grows!
+      </small>
+    </footer>
+  </div>
+
+  <script src="sentences.js"></script>
+  <script src="generator.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
